@@ -144,7 +144,7 @@ exports.getMyBookings = catchAsync(async (req, res, next) => {
 
   // await Tour.find({ _id:  });
 
-  console.log(tours);
+  // console.log(tours);
   // render the page
   res.status(200).render("overview", { title: "My Bookings", tours });
 });

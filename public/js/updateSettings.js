@@ -9,7 +9,7 @@ export const updatePassword = async (
   try {
     const res = await axios({
       method: "PATCH",
-      url: "http://127.0.0.1:5000/api/v1/users/updateMyPassword",
+      url: "/api/v1/users/updateMyPassword",
       data: {
         passwordConfirm,
         password,
@@ -34,7 +34,7 @@ export const updateUserData = async (name, email, photo, form) => {
 
     const res = await axios({
       method: "PATCH",
-      url: "http://127.0.0.1:5000/api/v1/users/updateMe",
+      url: "/api/v1/users/updateMe",
       headers: {
         "Content-Type": "multipart/form-data",
       },

@@ -55,11 +55,11 @@ exports.login = catchAsync(async (req, res, next) => {
   }
 
   // console.log(user);
-  console.log("Before Checking password");
+  // console.log("Before Checking password");
   if (!(await user.correctPassword(password, user.password))) {
     return next(new AppError("Incorrect email or password", 401));
   }
-  console.log("After Checking password");
+  // console.log("After Checking password");
 
   // 3) If everything is OK then send a response
   return createSendToken(user, 200, res);
@@ -171,7 +171,7 @@ exports.restrictTo = (...roles) => {
 };
 
 exports.forgotPassword = catchAsync(async (req, res, next) => {
-  console.log("Test");
+  // console.log("Test");
   // Get the user from POSTed email
   const user = await User.findOne({ email: req.body.email });
 

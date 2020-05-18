@@ -59,7 +59,7 @@ exports.createCheckout = catchAsync(async (req, res, next) => {
     }
   });
 
-  res.redirect("http://127.0.0.1:5000/my-bookings");
+  res.redirect("/my-bookings");
 
   return next();
 });

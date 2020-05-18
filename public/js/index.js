@@ -154,7 +154,7 @@ if (resetPasswordForm) {
     const password = document.getElementById("password").value;
     const passwordConfirm = document.getElementById("passwordConfirm").value;
     const token = location.href.replace(
-      "http://127.0.0.1:5000/reset-password/",
+      "/reset-password/",
       ""
     );
     renderLoader("resetPassword-btn");
