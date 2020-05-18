@@ -11,13 +11,13 @@ dotenv.config({ path: "./config.env" });
 
 const app = require("./app");
 
-// const DB = process.env.DATABASE.replace(
-//   "<PASSWORD>",
-//   process.env.DATABASE_PASSWORD
-// );
+const DB = process.env.DATABASE.replace(
+  "<PASSWORD>",
+  process.env.DATABASE_PASSWORD
+);
 
-const DB =
-  "mongodb+srv://muneeb:<password>@cluster0-qc7fx.mongodb.net/test?retryWrites=true&w=majority";
+// const DB =
+//   "mongodb+srv://muneeb:<qljIb6hXu8HHLXyK>@cluster0-qc7fx.mongodb.net/test?retryWrites=true&w=majority";
 
 const DBLOCAL = process.env.DATABASE_LOCAL;
 mongoose
