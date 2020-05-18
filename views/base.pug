@@ -1,0 +1,27 @@
+doctype html
+html(lang="en")
+  head
+    block head
+      meta(charset="UTF-8")
+      meta(name="viewport", content="width=device-width, initial-scale=1.0")
+      if tour
+        title= `Natours | ${tour.name}`
+      else if title
+        title= `Natours | ${title}`
+      else
+        title   Natours | Exciting tours for adventurous people
+      link(rel="stylesheet", href="https://fonts.googleapis.com/css?family=Lato:300,300i,700")
+      link(rel="shortcut icon", href="/img/favicon.png", type="image/png")
+      link(rel="stylesheet", href="/css/style.css")
+  body
+    // HEADER
+    include _header.pug
+
+    // CONTENT
+    block content
+    
+    // FOOTER
+    include _footer.pug
+  <script src="https://js.stripe.com/v3/"></script>
+  script(src="/js/bundle.js")
+
