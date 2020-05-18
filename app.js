@@ -82,7 +82,7 @@ app.all("*", function (req, res, next) {
   next(new AppError(`Can not find ${req.originalUrl} on the server?`, 404));
 });
 
-// Gobal Error Handler
+// Gobal Error Handler for all routes
 app.use(globalErrorHandler);
 
 // 4) START SERVER
