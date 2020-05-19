@@ -145,7 +145,6 @@ if (forgotPasswordForm) {
     const email = document.getElementById("email").value;
     renderLoader("forgotPassword-btn");
     await forgotPassword(email);
-    email.textContent = "";
     removeLoader("forgotPassword-btn", "Send Reset Token");
   });
 }

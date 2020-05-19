@@ -16,15 +16,13 @@ const DB = process.env.DATABASE.replace(
   process.env.DATABASE_PASSWORD
 );
 
-// const DB =
-//   "mongodb+srv://muneeb:<qljIb6hXu8HHLXyK>@cluster0-qc7fx.mongodb.net/test?retryWrites=true&w=majority";
-
 const DBLOCAL = process.env.DATABASE_LOCAL;
+
 mongoose
   .connect(DB, {
     useNewUrlParser: true,
     useCreateIndex: true,
-    useFindAndModify: false,
+    useFindAndModify: true,
     useUnifiedTopology: true,
   })
   .then(() => console.log("Conntected to DB ...."))
@@ -41,5 +39,14 @@ process.on("unhandledRejection", (err) => {
   console.log("Unhandled Rejection, Shutting down .....");
   server.close(() => {
     process.exit(1);
+  });
+});
+
+process.on("SIGTERM", () => {
+  console.log("====================================");
+  console.log("Gracefully shutting down the server");
+  console.log("====================================");
+  server.close(() => {
+    console.log("Process is terminating");
   });
 });
