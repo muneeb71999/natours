@@ -11,27 +11,27 @@ module.exports = class Email {
   }
 
   newTrasnport() {
-    if (process.env.NODE_ENV === "production") {
-      const auth = {
-        auth: {
-          api_key: process.env.MAILGUN_KEY,
-          domain: process.env.MAILGUN_DOMAIN,
-        },
-      };
-      return nodemailer.createTransport(mg(auth));
-    }
+    // if (process.env.NODE_ENV === "production") {
+    //   const auth = {
+    //     auth: {
+    //       api_key: process.env.MAILGUN_KEY,
+    //       domain: process.env.MAILGUN_DOMAIN,
+    //     },
+    //   };
+    //   return nodemailer.createTransport(mg(auth));
+    // }
 
-    if (process.env.NODE_ENV === "development") {
-      // Create the transport and return it
-      return nodemailer.createTransport({
-        host: process.env.EMAIL_HOST,
-        port: process.env.EMAIL_PORT,
-        auth: {
-          user: process.env.EMAIL_USERNAME,
-          pass: process.env.EMAIL_PASSWORD,
-        },
-      });
-    }
+    // if (process.env.NODE_ENV === "development") {
+    // Create the transport and return it
+    return nodemailer.createTransport({
+      host: process.env.EMAIL_HOST,
+      port: process.env.EMAIL_PORT,
+      auth: {
+        user: process.env.EMAIL_USERNAME,
+        pass: process.env.EMAIL_PASSWORD,
+      },
+    });
+    // }
   }
 
   async send(template, subject) {
