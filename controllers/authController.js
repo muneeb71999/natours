@@ -36,7 +36,7 @@ const createSendToken = (user, statusCode, req, res) => {
 exports.signup = catchAsync(async (req, res, next) => {
   const newUser = await User.create(req.body);
   const url = `${req.protocol}://${req.get("host")}/me`;
-  await new Email(newUser, url).sendWelome();
+  // await new Email(newUser, url).sendWelome();
   createSendToken(newUser, 201, req, res);
 });
 
@@ -197,7 +197,7 @@ exports.forgotPassword = catchAsync(async (req, res, next) => {
   //   message,
   // });
 
-  await new Email(user, requestURL).sendPasswordReset();
+  // await new Email(user, requestURL).sendPasswordReset();
 
   res.status(200).json({
     status: "success",
