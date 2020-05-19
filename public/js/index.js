@@ -69,11 +69,24 @@ if (signupForm) {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const passwordConfirm = document.getElementById("passwordConfirm").value;
-    renderLoader("btn--signup");
+
+    // const signupBtn = document.getElementById("signup-btn");
+    // signupBtn.setAttribute("disabled", "true");
+    // document.getElementById(
+    //   "signup-btn"
+    // ).innerHTML = `<div class='loader'></div>`;
+    // signupBtn.classList.add("disabled-btn");
+    // signupBtn.classList.add("btn--signup");
+    renderLoader("signup-btn");
 
     await signup(name, email, password, passwordConfirm);
 
-    removeLoader("btn--signup", "Signup");
+    removeLoader("signup-btn", "Signup");
+    // document.getElementById("signup-btn").innerHTML = "Signup";
+
+    // signupBtn.removeAttribute("disabled");
+    // signupBtn.classList.remove("disabled-btn");
+    // signupBtn.classList.remove("btn--signup");
   });
 }
 
