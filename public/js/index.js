@@ -69,21 +69,11 @@ if (signupForm) {
     const email = document.getElementById("email").value;
     const password = document.getElementById("password").value;
     const passwordConfirm = document.getElementById("passwordConfirm").value;
-
-    const signupBtn = document.getElementById("signup-btn");
-    signupBtn.setAttribute("disabled", "true");
-    document.getElementById(
-      "signup-btn"
-    ).innerHTML = `<div class='loader'></div>`;
-    signupBtn.classList.add("disabled-btn");
-    signupBtn.classList.add("btn--signup");
+    renderLoader("btn--signup");
 
     await signup(name, email, password, passwordConfirm);
-    document.getElementById("signup-btn").innerHTML = "Signup";
 
-    signupBtn.removeAttribute("disabled");
-    signupBtn.classList.remove("disabled-btn");
-    signupBtn.classList.remove("btn--signup");
+    removeLoader("btn--signup", "Signup");
   });
 }
 
@@ -153,10 +143,7 @@ if (resetPasswordForm) {
     e.preventDefault();
     const password = document.getElementById("password").value;
     const passwordConfirm = document.getElementById("passwordConfirm").value;
-    const token = location.href.replace(
-      "/reset-password/",
-      ""
-    );
+    const token = location.href.replace("/reset-password/", "");
     renderLoader("resetPassword-btn");
     await resetPassword(password, passwordConfirm, token);
     removeLoader("resetPassword-btn", "Reset my password");
