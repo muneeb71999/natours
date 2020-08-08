@@ -6,4 +6,4 @@ MongoDb
 Express
 Mongoose
 
-/n https://natours-luxury.herokuapp.com/
+https://natours-luxury.herokuapp.com/
