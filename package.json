@@ -34,7 +34,7 @@
     "multer": "^1.4.2",
     "nodemailer": "^6.4.6",
     "nodemailer-mailgun-transport": "^2.0.0",
-    "pug": "^2.0.4",
+    "pug": "^3.0.1",
     "sharp": "^0.25.2",
     "stripe": "^8.52.0",
     "validator": "^10.5.0",
